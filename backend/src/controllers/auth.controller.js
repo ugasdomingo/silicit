@@ -7,7 +7,6 @@ import { generateRefreshToken, generateToken } from "../utils/generateToken.js";
 //Register Controller ***************
 export const register = async (req, res) => {
 
-  //Get Data
   const { name, email, password, subscription } = req.body;
 
   //unique email validation 
@@ -32,17 +31,14 @@ export const register = async (req, res) => {
 //Login Controller ***************
 export const login = (req, res) => {
 
-  //Get Data from Request
   const { email, password } = req.body;
 
-  //Find User by Email
   User.findOne({ email })
     .then((user) => {
         
-      //Check if User Exists
+      //Validate Crendentials
       if (!user) return res.status(404).json({ error: "User not found" });
 
-      //Check if Password is Correct
       if (!user.comparePassword(password))
         return res.status(400).json({ error: "Password is incorrect" })
       ;
@@ -53,7 +49,7 @@ export const login = (req, res) => {
 
       return res.status(200).json({ token, expiresIn });
     })
-    .catch((err) => {res.status(500).json({ errors: err });}
+    .catch((err) => {res.status(500).json({ error: err });}
   );
 };
 

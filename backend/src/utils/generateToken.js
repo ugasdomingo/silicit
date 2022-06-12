@@ -3,17 +3,23 @@ import jwt from "jsonwebtoken";
 
 //Generate Token ***************
 export const generateToken = (user) => {
+
   const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
     expiresIn: parseInt(process.env.JWT_EXPIRES_IN),
   });
+
   return {token, expiresIn: parseInt(process.env.JWT_EXPIRES_IN)};
 }
 
+
+// Generate Refresh Token ***************
 export const generateRefreshToken = (user, res) => {
+
   const refreshToken = jwt.sign({ id: user._id }, process.env.JWT_REFRESH, {
     expiresIn: parseInt(process.env.JWT_REFRESH_EXPIRES),
   });
-  //Guardar en Cookies *****************
+
+  //Guardar en Cookies 
   res.cookie("refreshToken", refreshToken, {
     httpOnly: true,
     secure: !(process.env.MODO === "developer"),

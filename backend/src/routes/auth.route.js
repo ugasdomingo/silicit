@@ -1,15 +1,15 @@
 //Tols Import ***************
 import express from 'express';
 import { body } from 'express-validator';
-import { login, register } from '../controllers/auth.controller.js';
+import { login, register, refreshToken, logout } from '../controllers/auth.controller.js';
 import { validateReqBody } from '../middlewares/validationReqBody.js';
 
 //Declare router
 const router = express.Router();
 
-//Routes
+//Register *****************
 router.post('/register',[
-  //Validate request
+  
   body('email')
     .trim()
     .isEmail()
@@ -23,8 +23,9 @@ router.post('/register',[
     ,
 ], validateReqBody, register);
 
+//Login ****************
 router.post('/login',[
-  //Validate request
+  
   body('email')
     .trim()
     .isEmail()
@@ -39,5 +40,13 @@ router.post('/login',[
 ], validateReqBody, login);
 
 
-//Export router
+//Refresh Token ****************
+router.get('/refresh', refreshToken);
+
+
+//Logout ****************
+router.get('/logout', logout);
+
+
+
 export default router;

@@ -3,12 +3,14 @@ import 'dotenv/config';
 import './database/connectdb.js';
 import express from 'express';
 import authRoute from './routes/auth.route.js';
+import cookieParser from 'cookie-parser';
 
 //Declare App ********************
 const app = express();
 
 //Middleware ********************
 app.use(express.json());
+app.use(cookieParser());
 app.use('/api/v1', authRoute);
 
 //Default Port ********************

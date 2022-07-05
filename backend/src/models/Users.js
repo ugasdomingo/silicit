@@ -1,9 +1,10 @@
 //Tools Import ***************
 import mongoose from 'mongoose';
+const { Schema, model } = mongoose;
 import bcryptjs from 'bcryptjs';
 
-// Create schemas ***************
-const userSchema = new mongoose.Schema({
+
+const userSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -34,6 +35,7 @@ const userSchema = new mongoose.Schema({
   }
 });
 
+//Hash the password before saving
 userSchema.pre('save', function(next) {
   const user = this;
   
@@ -49,8 +51,10 @@ userSchema.pre('save', function(next) {
   });
 });
 
+
 userSchema.methods.comparePassword = function(clientPassword) {
   return bcryptjs.compareSync(clientPassword, this.password);
 };
 
-export const User = mongoose.model('User', userSchema);
+
+export const User = model('User', userSchema);

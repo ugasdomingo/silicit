@@ -1,0 +1,136 @@
+:root {
+    --color-primary: #45115b;
+    --color-secondary: #75388F;
+    --color-tertiary: #AA72C2;
+    --color-text: #f9f9f9;
+    --color-accent: #35DB56;
+    --color-alert: #B9DB34;
+    --color-approve: #00b894;
+    --color-white: #F7E8FB;
+    --color-background: #000000;
+    --color-bg-transparent: #00000081;
+    --color-disabled: gray;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(10deg , var(--color-primary) 10%, var(--color-background) 90%);
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+}
+h2 {
+  font-size: 2.5rem;
+  line-height: 1.1;
+}
+h3 {
+    font-size: 2rem;
+    line-height: 1.1;
+}
+h4 {
+    font-size: 1.5rem;
+    line-height: 1.1;
+}
+p {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    font-weight: 200;
+    letter-spacing: 0.1rem;
+}
+
+.pages {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    padding: 5rem 4rem 0;
+    margin: 0;
+    color: var(--color-text);
+    position: relative;
+    box-sizing: border-box;
+}
+
+.button {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    font-size: 1.25rem;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: var(--color-secondary);
+        transform: scale(1.1);
+    }
+}
+.button__action {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    font-size: 1.25rem;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: var(--color-tertiary);
+        transform: scale(1.1);
+    }
+}
+.button__pasive {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-text);
+  background-color: transparent;
+  color: var(--color-text);
+  font-size: 1.25rem;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s;
+  
+  &:hover {
+      background-color: var(--color-tertiary);
+      transform: scale(1.1);
+      border: 1px solid transparent;
+  }
+}
+
+
+#app {
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex ;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

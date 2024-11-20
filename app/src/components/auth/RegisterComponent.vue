@@ -64,7 +64,10 @@ const validate_renew = async () => {
         <button class="button__action" @click="register" v-if="policy_accepted">
             Registrarse
         </button>
-        <aside class="renew__container">
+        <aside
+            class="renew__container"
+            :class="{ hidden: props.membershipType === 'make-money' }"
+        >
             <h3>¿Estas renovando tu membresía?</h3>
             <div class="login__and__renew" v-if="show_renew">
                 <input type="email" v-model="email" placeholder="Email" />
@@ -129,6 +132,10 @@ const validate_renew = async () => {
         right: 4rem;
         border-radius: 1rem;
         box-shadow: 0 0 1rem rgba(255, 255, 255, 0.3);
+
+        &.hidden {
+            display: none;
+        }
 
         h3 {
             font-size: 1rem;

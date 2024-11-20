@@ -12,7 +12,7 @@ const scroll_next_section = () => {
     <section class="hero">
         <h1>
             Conviértete en Profesional <br />
-            <span>en tecnología u otra carrera digital</span>
+            <span>de tecnología u otra carrera digital</span>
         </h1>
         <h4>
             Si te faltan recursos para entrar en la Universidad o para hacer una
@@ -73,6 +73,10 @@ const scroll_next_section = () => {
 @media screen and (max-width: 768px) {
     .hero {
         width: 90%;
+
+        h1 {
+            line-height: 0.9;
+        }
     }
 }
 </style>

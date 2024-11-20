@@ -14,7 +14,7 @@ const utilStore = useUtilStore();
 <template>
     <div class="modal__job">
         <h3 class="modal__title">
-            {{ props.data?.title }} de
+            {{ props.data?.title }} por
             <span>{{ props.data?.company }}</span>
         </h3>
         <p class="modal__description">{{ props.data?.description }}</p>

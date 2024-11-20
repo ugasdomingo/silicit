@@ -16,7 +16,8 @@ export const jobs = [
         start_date: '11/01/2025',
         quorum: 15,
         url: 'https://www.digiempresas.com.es/cursos/wordpress',
-        image_url: '/images/laptop-bg.jpg'
+        image_url:
+            'https://res.cloudinary.com/minteados/image/upload/v1732091912/silicit/jobs/wordpress_aryvys.png'
     },
     {
         id: 2,
@@ -35,6 +36,7 @@ export const jobs = [
         start_date: '11/01/2025',
         quorum: 15,
         url: 'https://www.digiempresas.com.es/cursos/community-manager',
-        image_url: '/images/laptop-bg.jpg'
+        image_url:
+            'https://res.cloudinary.com/minteados/image/upload/v1732091911/silicit/jobs/community_v5iofx.png'
     }
 ];

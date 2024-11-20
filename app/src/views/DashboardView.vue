@@ -6,7 +6,11 @@ import RightContentComponent from '@/components/dashboard/RightContentComponent.
 
 <template>
     <main class="pages">
-        <img src="/images/desk.jpg" alt="image background" class="background" />
+        <img
+            src="https://res.cloudinary.com/minteados/image/upload/v1732091632/silicit/fondo-silicit_xf3loh.png"
+            alt="image background"
+            class="background"
+        />
         <LeftContentComponent />
         <RightContentComponent />
     </main>

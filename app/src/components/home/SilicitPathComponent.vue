@@ -57,7 +57,7 @@ onUnmounted(() => {
         </div>
         <div class="progress__indicator">
             <img
-                src="/icons/vite.svg"
+                src="/icons/logo.svg"
                 alt="icono-usuario"
                 class="progress__icon"
                 :style="{
@@ -186,6 +186,7 @@ onUnmounted(() => {
                 border: 1px solid var(--color-accent);
                 border-radius: 1rem;
                 padding-left: 1rem;
+                cursor: pointer;
             }
         }
     }

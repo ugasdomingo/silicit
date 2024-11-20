@@ -5,7 +5,8 @@ import { jobs } from '@/static/jobs';
 
 //Use tools
 const util_store = useUtilStore();
-const other_jobs_image = '/images/laptop-bg.jpg';
+const other_jobs_image =
+    'https://res.cloudinary.com/minteados/image/upload/v1732091911/silicit/jobs/otros_sr4ycq.png';
 </script>
 
 <template>

@@ -46,4 +46,27 @@ footer {
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    footer {
+        padding: 1rem;
+        height: fit-content;
+        background-color: var(--color-background);
+
+        p {
+            width: 50%;
+            font-size: 0.8rem;
+        }
+
+        nav {
+            width: 50%;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.5rem;
+            a {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
 </style>

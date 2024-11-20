@@ -54,4 +54,16 @@ const other_jobs_image = '/images/laptop-bg.jpg';
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .jobs__container {
+        flex-direction: column;
+        align-items: center;
+
+        .jobs {
+            width: 100%;
+            max-width: 250px;
+        }
+    }
+}
 </style>

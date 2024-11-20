@@ -104,4 +104,17 @@ const actions = [
         overflow: hidden;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .right {
+        width: 100%;
+        height: 100%;
+        margin: 0 0 1rem;
+
+        .right__acctions {
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+    }
+}
 </style>

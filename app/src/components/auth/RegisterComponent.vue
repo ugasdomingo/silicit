@@ -50,15 +50,17 @@ const validate_renew = async () => {
         <input type="email" v-model="email" placeholder="Email" />
         <input type="tel" v-model="phone" placeholder="Teléfono" />
         <input type="password" v-model="password" placeholder="Contraseña" />
-        <label>
+        <div class="policy">
             <input type="checkbox" v-model="policy_accepted" />
-            Acepto la
-            <RouterLink to="/privacidad">política de privacidad</RouterLink>
-            y los
-            <RouterLink to="/terminos-condiciones">
-                términos y condiciones
-            </RouterLink>
-        </label>
+            <label>
+                Acepto la
+                <RouterLink to="/privacidad">política de privacidad</RouterLink>
+                y los
+                <RouterLink to="/terminos-condiciones">
+                    términos y condiciones
+                </RouterLink>
+            </label>
+        </div>
         <button class="button__action" @click="register" v-if="policy_accepted">
             Registrarse
         </button>
@@ -158,6 +160,53 @@ const validate_renew = async () => {
 
         &:hover {
             transform: scale(1.1);
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .register {
+        width: 100%;
+        height: fit-content;
+        min-height: 100vh;
+        padding: 1rem;
+        box-sizing: border-box;
+        input {
+            width: 70%;
+        }
+        .policy {
+            display: flex;
+            gap: 0;
+            justify-content: center;
+            align-items: center;
+
+            label {
+                font-size: 0.75rem;
+            }
+            input {
+                width: 2rem;
+                height: 2rem;
+                margin-right: 0.5rem;
+            }
+        }
+        button {
+            width: 50%;
+        }
+        .renew__container {
+            width: 100%;
+            margin-top: 2rem;
+            position: inherit;
+            box-sizing: border-box;
+
+            .login__and__renew {
+                width: 100%;
+                input {
+                    width: 60%;
+                }
+                button {
+                    width: 50%;
+                }
+            }
         }
     }
 }

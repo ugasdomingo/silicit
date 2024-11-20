@@ -3,7 +3,7 @@ export const steps = [
         code: 'P1',
         title: 'Paso 1: Aprende un oficio digital',
         description:
-            'Aprender un oficio digital, te permitirá generar fondos de manera inmediata para poder financiar tu formación, proveer en el hogar en caso que lo necesites y, por supuesto, acceder a mejores herramientas de trabajo.',
+            'Un oficio digital te permitirá generar ingresos para financiar tu formación, proveer en tu hogar y acceder a mejores herramientas de trabajo.',
         video: '<iframe width="392" height="220.50" src="https://www.youtube-nocookie.com/embed/x4PU6pGEDWw?si=BCXxMNGNzkgbXf0t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
     },
     {

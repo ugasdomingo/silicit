@@ -18,3 +18,9 @@ export default {
     }
 };
 </script>
+
+<style scoped lang="scss">
+div {
+    margin: 4rem 0 1rem;
+}
+</style>

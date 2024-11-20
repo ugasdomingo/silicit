@@ -98,11 +98,28 @@ const show_platzi_video = ref(false);
             width: 50%;
             margin: 0;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
 
             .platzi-video {
                 margin-top: 1rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .platzi {
+        .content-container {
+            flex-direction: column;
+
+            .left-content {
+                width: 100%;
+            }
+
+            .right-content {
+                width: 100%;
             }
         }
     }

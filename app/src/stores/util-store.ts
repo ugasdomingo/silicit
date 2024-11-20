@@ -9,6 +9,7 @@ export const useUtilStore = defineStore('utils', () => {
     //General states
     const loading = ref(false);
     const membership_register = ref('Free');
+    const is_mobile = ref(false);
 
     //Display Messages states
     const message = ref('');
@@ -48,10 +49,19 @@ export const useUtilStore = defineStore('utils', () => {
         }, 6500);
     };
 
+    const screen_size = () => {
+        if (window.innerWidth <= 768) {
+            is_mobile.value = true;
+        } else {
+            is_mobile.value = false;
+        }
+    };
+
     //Return the states and methods
     return {
         loading,
         membership_register,
+        is_mobile,
         message,
         message_type,
         show_notification,
@@ -62,6 +72,7 @@ export const useUtilStore = defineStore('utils', () => {
         stop_loading,
         open_modal,
         close_modal,
-        display_notification
+        display_notification,
+        screen_size
     };
 });

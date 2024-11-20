@@ -50,4 +50,16 @@ const props = defineProps<{
         cursor: pointer;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .modal {
+        height: fit-content;
+        min-height: 100vh;
+        .modal__close {
+            top: 1.5rem;
+            right: 1rem;
+            z-index: 1100;
+        }
+    }
+}
 </style>

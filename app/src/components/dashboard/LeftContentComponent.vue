@@ -194,4 +194,25 @@ onBeforeMount(async () => {
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .left {
+        width: 100%;
+        height: 100%;
+        gap: 1rem;
+        margin: 3rem 0 1rem;
+
+        .user__info {
+            padding: 1rem 0.5rem;
+        }
+
+        .user__goals {
+            padding: 1rem 0.5rem;
+        }
+
+        .user__history {
+            padding: 1rem 0.5rem;
+        }
+    }
+}
 </style>

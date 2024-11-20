@@ -28,4 +28,12 @@
         color: var(--color-text);
     }
 }
+
+@media screen and (max-width: 768px) {
+    .events__container {
+        p {
+            text-align: center;
+        }
+    }
+}
 </style>

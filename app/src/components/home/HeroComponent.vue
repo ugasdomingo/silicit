@@ -69,4 +69,10 @@ const scroll_next_section = () => {
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .hero {
+        width: 90%;
+    }
+}
 </style>

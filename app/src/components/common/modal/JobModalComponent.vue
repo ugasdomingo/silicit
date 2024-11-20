@@ -1,10 +1,14 @@
 <script setup lang="ts">
 //Import tools
 import { IJob } from '@/interfaces/IJobs';
+import { useUtilStore } from '@/stores/util-store';
 
 const props = defineProps<{
     data: IJob;
 }>();
+
+//Data
+const utilStore = useUtilStore();
 </script>
 
 <template>
@@ -15,7 +19,17 @@ const props = defineProps<{
         </h3>
         <p class="modal__description">{{ props.data?.description }}</p>
         <div class="modal__info__container">
-            <p class="modal__info__video" v-html="props.data?.video_large"></p>
+            <p
+                class="modal__info__video"
+                v-html="props.data?.video_small"
+                v-if="utilStore.is_mobile"
+            ></p>
+            <p
+                class="modal__info__video"
+                v-html="props.data?.video_large"
+                v-else
+            ></p>
+
             <div class="modal__info__other">
                 <p class="modal__price">
                     Precio:
@@ -104,6 +118,43 @@ const props = defineProps<{
     .button__action {
         width: 50%;
         margin: 2rem auto 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .modal__job {
+        width: 90%;
+        height: 90vh;
+        padding: 1rem;
+
+        .modal__title {
+            font-size: 1.5rem;
+        }
+
+        .modal__description {
+            width: 80%;
+            font-size: 1rem;
+        }
+
+        .modal__info__container {
+            flex-direction: column;
+            gap: 1rem;
+
+            .modal__info__video {
+                margin: 0 auto;
+            }
+
+            .modal__info__other {
+                p {
+                    padding: 0.5rem 0.25rem;
+                    font-size: 0.75rem;
+                }
+            }
+        }
+
+        .button__action {
+            width: 80%;
+        }
     }
 }
 </style>

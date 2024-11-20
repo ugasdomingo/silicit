@@ -1,15 +1,34 @@
 <script setup lang="ts">
 //Import tools
-import { ref } from 'vue';
+import { ref, onBeforeMount, onUnmounted } from 'vue';
 import { steps } from '@/static/silicit-path';
 
 //Data
 const current_step = ref(1);
+const number_px_icon = ref(4);
 
 //Methods
-const showStep = (step: number) => {
+const screen_size = () => {
+    if (window.innerWidth <= 768) {
+        number_px_icon.value = 4;
+    } else {
+        number_px_icon.value = 8;
+    }
+};
+
+const show_step = (step: number) => {
     current_step.value = step;
 };
+
+//Lifecycle
+onBeforeMount(() => {
+    screen_size();
+    window.addEventListener('resize', screen_size);
+});
+
+onUnmounted(() => {
+    window.removeEventListener('resize', screen_size);
+});
 </script>
 
 <template>
@@ -41,13 +60,35 @@ const showStep = (step: number) => {
                 src="/icons/vite.svg"
                 alt="icono-usuario"
                 class="progress__icon"
-                :style="{ transform: `translateX(${current_step * 8}rem)` }"
+                :style="{
+                    transform: `translateX(${current_step * number_px_icon}rem)`
+                }"
             />
             <div class="progress__bar">
-                <article @click="showStep(1)">Paso 1</article>
-                <article @click="showStep(2)">Paso 2</article>
-                <article @click="showStep(3)">Paso 3</article>
-                <article @click="showStep(4)">Paso 4</article>
+                <article
+                    :class="current_step === 1 ? 'Active' : ''"
+                    @click="show_step(1)"
+                >
+                    Paso 1
+                </article>
+                <article
+                    :class="current_step === 2 ? 'Active' : ''"
+                    @click="show_step(2)"
+                >
+                    Paso 2
+                </article>
+                <article
+                    :class="current_step === 3 ? 'Active' : ''"
+                    @click="show_step(3)"
+                >
+                    Paso 3
+                </article>
+                <article
+                    :class="current_step === 4 ? 'Active' : ''"
+                    @click="show_step(4)"
+                >
+                    Paso 4
+                </article>
             </div>
         </div>
     </section>
@@ -145,6 +186,69 @@ const showStep = (step: number) => {
                 border: 1px solid var(--color-accent);
                 border-radius: 1rem;
                 padding-left: 1rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .silicit__path {
+        justify-content: space-between;
+        padding: 4rem 1rem;
+        .description {
+            width: 90%;
+        }
+
+        .carousel {
+            height: 70%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0.5rem 0;
+            gap: 0.5rem;
+
+            .carousel__item {
+                height: 100%;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 0.5rem;
+                padding: 0;
+
+                .left-information {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                .right-information {
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        }
+
+        .progress__indicator {
+            position: relative;
+            justify-content: center;
+            box-sizing: border-box;
+            .progress__icon {
+                display: none;
+            }
+            .progress__bar {
+                width: 100%;
+                gap: 0.5rem;
+                box-sizing: border-box;
+
+                article {
+                    font-size: 0.9rem;
+                    width: 3rem;
+                    height: 2rem;
+                    transition: all 0.75s;
+                }
+
+                article.Active {
+                    background-color: var(--color-accent);
+                    color: white;
+                }
             }
         }
     }

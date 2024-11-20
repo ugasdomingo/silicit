@@ -28,4 +28,10 @@ import RightContentComponent from '@/components/dashboard/RightContentComponent.
         z-index: -1;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .pages {
+        flex-direction: column;
+    }
+}
 </style>

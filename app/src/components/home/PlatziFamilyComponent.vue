@@ -33,7 +33,7 @@ const show_platzi_video = ref(false);
                     <iframe
                         width="392"
                         height="220.50"
-                        src="https://www.youtube-nocookie.com/embed/x4PU6pGEDWw?si=BCXxMNGNzkgbXf0t"
+                        src="https://www.youtube.com/embed/lF-_ESv9ukQ?si=4nxMP49kSmn6HoZZ"
                         title="YouTube video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

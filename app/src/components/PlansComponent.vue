@@ -32,7 +32,7 @@ const util_store = useUtilStore();
         <article class="be-professional">
             <h3>Be Professional</h3>
             <p class="subtitle">Conviértete en profesional</p>
-            <h4 class="price">9,99 USD</h4>
+            <h4 class="price">4,99 USD</h4>
             <p class="duration">12 meses</p>
             <div class="benefits" :class="{ hidden: util_store.is_mobile }">
                 <h4>Beneficios</h4>

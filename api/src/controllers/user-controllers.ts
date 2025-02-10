@@ -295,7 +295,7 @@ export const forgot_password = async (req: any, res: any) => {
         await send_email(
             email,
             'Solicitud para recuperar contraseña',
-            `Para recuperar tu contraseña, ingresa al siguiente link: ${process.env.CLIENT_URL}/reset-password/${user._id}/${reset_token}`
+            `Para recuperar tu contraseña, ingresa al siguiente link: ${process.env.CLIENT_URL}/reset-password/${reset_token}`
         );
 
         client_response(
@@ -320,18 +320,17 @@ export const forgot_password = async (req: any, res: any) => {
 
 export const change_password = async (req: any, res: any) => {
     try {
-        const { old_password, new_password, user_id, reset_token } = req.body;
-        const user: IUser | null = await User_model.findById(user_id);
+        const { new_password, reset_token } = req.body;
+        console.log(reset_token);
+        const user: IUser | null = await User_model.findOne({
+            reset_token,
+        });
 
         if (!user) {
             return client_response(res, 400, 'Usuario no encontrado');
         }
 
-        if (user.reset_token !== reset_token) {
-            return client_response(res, 401, 'Operación no autorizada');
-        }
-
-        await user.changePassword(old_password, new_password);
+        await user.changePassword(new_password);
 
         client_response(res, 200, 'Contraseña cambiada correctamente');
     } catch (error: any) {

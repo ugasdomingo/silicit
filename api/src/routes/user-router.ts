@@ -27,7 +27,7 @@ user_router.post('/refresh', refreshToken);
 
 user_router.post('/forgot-password', forgot_password);
 
-user_router.post('/change-password', user_auth, change_password);
+user_router.post('/change-password', change_password);
 
 user_router.get('/get-users', admin_auth, get_users);
 

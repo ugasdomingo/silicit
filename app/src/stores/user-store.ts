@@ -173,10 +173,8 @@ export const useUserStore = defineStore('user', () => {
     };
 
     const change_password = async (
-        new_password: string,
-        user_id: string,
         reset_token: string,
-        old_password?: string
+        new_password: string
     ) => {
         try {
             const response = await api({
@@ -186,10 +184,8 @@ export const useUserStore = defineStore('user', () => {
                     Authorization: `Bearer ${token.value}`
                 },
                 data: {
-                    new_password,
-                    user_id,
                     reset_token,
-                    old_password
+                    new_password
                 }
             });
 
@@ -198,6 +194,7 @@ export const useUserStore = defineStore('user', () => {
                     response.data.message,
                     'success'
                 );
+                router.push('/dashboard');
             } else {
                 utilStore.display_notification(response.data.message, 'error');
             }

@@ -16,6 +16,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/AccessView.vue')
     },
     {
+        path: '/reset-password/:token',
+        name: 'ResetPassword',
+        component: () => import('@/views/ResetPasswordView.vue')
+    },
+    {
         path: '/registro',
         name: 'Register',
         component: () => import('@/views/RegisterView.vue')
@@ -24,6 +29,12 @@ const routes: Array<RouteRecordRaw> = [
         path: '/sobre-nosotros',
         name: 'About',
         component: () => import('@/views/AboutView.vue')
+    },
+    /* Promo routes *********************** */
+    {
+        path: '/promociones',
+        name: 'Promo',
+        component: () => import('@/views/PromoView.vue')
     },
     /* Legal routes *********************** */
     {
@@ -47,6 +58,12 @@ const routes: Array<RouteRecordRaw> = [
         path: '/registro/:plan',
         name: 'Register',
         component: () => import('@/views/RegisterView.vue')
+    },
+    /* Error routes ******************************* */
+    {
+        path: '/:pathMatch(.*)*',
+        name: 'Error',
+        component: () => import('@/views/ErrorView.vue')
     }
 ];
 

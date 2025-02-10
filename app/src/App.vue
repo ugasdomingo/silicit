@@ -8,6 +8,7 @@ import HeaderComponent from './components/layout/HeaderComponent.vue';
 import FooterComponent from './components/layout/FooterComponent.vue';
 import DisplayMessageComponent from './components/common/DisplayMessageComponent.vue';
 import ModalComponent from './components/common/ModalComponent.vue';
+import FloatingPromoComponent from './components/layout/FloatingPromoComponent.vue';
 55;
 
 //Activate tools
@@ -27,6 +28,7 @@ const utilStore = useUtilStore();
         :data="utilStore.modal_data"
     />
     <RouterView />
+    <FloatingPromoComponent />
     <FooterComponent />
 </template>
 

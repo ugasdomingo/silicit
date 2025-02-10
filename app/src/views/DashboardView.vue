@@ -7,7 +7,7 @@ import RightContentComponent from '@/components/dashboard/RightContentComponent.
 <template>
     <main class="pages">
         <img
-            src="https://res.cloudinary.com/minteados/image/upload/v1732091632/silicit/fondo-silicit_xf3loh.png"
+            src="https://res.cloudinary.com/minteados/image/upload/v1732091632/silicit/backgrounds/fondo-silicit_xf3loh.png"
             alt="image background"
             class="background"
         />

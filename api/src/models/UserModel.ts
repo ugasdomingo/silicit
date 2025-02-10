@@ -18,7 +18,7 @@ export interface IUser extends Document {
     createdAt: Date;
     editedAt: Date;
     comparePassword: (password: string) => Promise<boolean>;
-    changePassword: (oldPassword: string, newPassword: string) => Promise<void>;
+    changePassword: (newPassword: string) => Promise<void>;
 }
 
 //Schema
@@ -93,13 +93,9 @@ userSchema.methods.comparePassword = async function (
 
 //Change password
 userSchema.methods.changePassword = async function (
-    oldPassword: string,
     newPassword: string
 ): Promise<void> {
     try {
-        if (!(await this.comparePassword(oldPassword))) {
-            throw new Error('Invalid password');
-        }
         this.password = newPassword;
         await this.save();
     } catch (error) {

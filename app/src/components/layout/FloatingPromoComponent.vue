@@ -1,9 +1,13 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
+import { useRoute } from 'vue-router';
+
+//tools
+const route = useRoute();
 </script>
 
 <template>
-    <section class="promo__container">
+    <section class="promo__container" v-if="route.path === '/'">
         <p>Consigue 1 año de Platzi gratis</p>
         <RouterLink to="/promociones" class="button__action">
             Participar

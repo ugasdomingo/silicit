@@ -135,6 +135,13 @@ export const register = async (req: any, res: any) => {
         //Set cookies
         set_cookies(res, refreshToken);
 
+        //Inform with mail
+        await send_email(
+            'info@silicit.es',
+            '¡Nuevo Registro!',
+            `¡Se registró ${name}! \n\n Correo: ${email} \n\n Contacto: ${phone}`
+        );
+
         //Response
         client_response(
             res,

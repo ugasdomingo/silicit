@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+
 <template>
     <section class="aviso-legal">
         <h1>Aviso Legal</h1>
@@ -86,10 +88,6 @@
         </p>
     </section>
 </template>
-
-<script setup>
-// No se requiere lógica adicional para este componente estático
-</script>
 
 <style scoped>
 .aviso-legal {

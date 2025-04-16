@@ -91,6 +91,7 @@
 
 <style scoped>
 .aviso-legal {
+    color: var(--color-text);
     margin: 0;
     padding: 4rem 2rem;
 }

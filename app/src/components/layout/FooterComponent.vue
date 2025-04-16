@@ -9,6 +9,7 @@
                 Términos y condiciones
             </RouterLink>
             <RouterLink to="/privacidad">Política de privacidad</RouterLink>
+            <RouterLink to="/aviso-legal">Aviso Legal</RouterLink>
         </nav>
     </footer>
 </template>

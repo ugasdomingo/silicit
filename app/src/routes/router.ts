@@ -47,6 +47,11 @@ const routes: Array<RouteRecordRaw> = [
         name: 'Privacy',
         component: () => import('@/views/legal/PrivacyView.vue')
     },
+    {
+        path: '/aviso-legal',
+        name: 'Legal',
+        component: () => import('@/views/legal/LegalNoticeView.vue')
+    },
     /* Private routes ******************************* */
     {
         path: '/dashboard',
